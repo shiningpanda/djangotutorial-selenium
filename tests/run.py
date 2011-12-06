@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
 import os
 import sys
+import nose
 
-folder = os.path.dirname(os.path.abspath(__file__))
-base = os.path.dirname(folder)
+testdir = os.path.dirname(os.path.abspath(__file__))
+basedir = os.path.dirname(testdir)
 
-sys.path.insert(0, base)
-sys.path.insert(0, os.path.join('djangotutorial'))
+sys.path.insert(0, basedir)
+sys.path.insert(1, os.path.join(basedir, 'djangotutorial'))
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
 
-os.chdir(folder)
+os.chdir(testdir)
 
-import nose
 nose.main()
