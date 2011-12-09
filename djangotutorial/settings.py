@@ -3,14 +3,13 @@
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
-SELENIUM_BROWSER_COMMAND = '*firefox'
-
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
 
 MANAGERS = ADMINS
 
+TEST_DATABASE_NAME = 'djangotutorialtest.db'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
@@ -19,10 +18,9 @@ DATABASES = {
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-        'TEST_NAME': 'djangotutorialtest.db',
+        'TEST_NAME': TEST_DATABASE_NAME,
     }
 }
-TEST_DATABASE_NAME = 'djangotutorial.db'
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
