@@ -1,4 +1,6 @@
 #-*- coding: utf-8 -*-
+import time
+
 from selenose.cases import SeleniumTestCase
 
 from djangosanetesting.cases import HttpTestCase
@@ -16,6 +18,8 @@ class AdminTestCase(SeleniumTestCase, HttpTestCase):
         password.send_keys('admin')
         # Submit the form
         password.submit()
+        # Load page
+        time.sleep(2)
         # Check that welcomed
         self.assertTrue(self.driver.find_element_by_id('user-tools').text.startswith('Welcome'))
 
