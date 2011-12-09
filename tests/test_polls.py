@@ -1,7 +1,9 @@
 #-*- coding: utf-8 -*-
+from selenose.cases import SeleniumTestCase
+
 from djangosanetesting.cases import HttpTestCase
 
-from selenose.cases import SeleniumTestCase
+from selenium.webdriver.support.ui import WebDriverWait
 
 class PollsTestCase(SeleniumTestCase, HttpTestCase):
     
@@ -12,8 +14,8 @@ class PollsTestCase(SeleniumTestCase, HttpTestCase):
         poll = self.driver.find_element_by_link_text('How is selenose?')
         # Click on the link
         poll.click()
-        # Get the available choices
-        choices = self.driver.find_elements_by_name('choice')
+        # Wait page
+        choices = WebDriverWait(self.driver, 5).until(lambda driver : self.driver.find_elements_by_name('choice'))
         # Check that only two choices: "Cool" and "Super cool"
         self.assertEquals(2, len(choices))
         # Select "Super cool"
