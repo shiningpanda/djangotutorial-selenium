@@ -157,4 +157,11 @@ LOGGING = {
 PROJECT_APPS = [
     'polls',                
 ]
+JENKINS_TASKS = [
+    'django_jenkins.tasks.run_pylint',
+    'django_jenkins.tasks.with_coverage',
+    'django_jenkins.tasks.django_tests',
+    'selenose.tasks.selenium_server',
+    'selenose.tasks.selenium_driver',
+]
 
