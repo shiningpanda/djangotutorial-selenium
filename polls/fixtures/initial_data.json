@@ -9,20 +9,20 @@
             "is_active": true,
             "is_superuser": true,
             "is_staff": true,
-            "last_login": "2011-12-02 03:59:49",
+            "last_login": "2012-08-04T07:28:44.371Z",
             "groups": [],
             "user_permissions": [],
-            "password": "sha1$60fbd$533d780a0ec68bcb48de427ec96cabbfbba6474d",
+            "password": "pbkdf2_sha256$10000$ZZfXGPuIbLuq$JqJRtj7TvkNEiQGga35tsi1h03wBzUCMTwTHhtlYPs8=",
             "email": "admin@shiningpanda.com",
-            "date_joined": "2011-12-02 03:59:49"
+            "date_joined": "2011-12-02T09:59:49Z"
         }
     },
     {
         "pk": 1,
         "model": "polls.poll",
         "fields": {
-            "pub_date": "2011-10-24 20:06:52",
-            "question": "How is selenose?"
+            "pub_date": "2011-10-25T01:06:52Z",
+            "question": "ShiningPanda is a..."
         }
     },
     {
@@ -31,7 +31,7 @@
         "fields": {
             "votes": 0,
             "poll": 1,
-            "choice": "Cool?"
+            "choice": "Hosted CI service?"
         }
     },
     {
@@ -40,7 +40,16 @@
         "fields": {
             "votes": 0,
             "poll": 1,
-            "choice": "Super cool?"
+            "choice": "Consulting firm?"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "polls.choice",
+        "fields": {
+            "votes": 0,
+            "poll": 1,
+            "choice": "Both!"
         }
     }
 ]
